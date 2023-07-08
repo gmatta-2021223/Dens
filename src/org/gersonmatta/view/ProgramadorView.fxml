@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="fondoBlanco" stylesheets="@../resource/DensCSS.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gersonmatta.controller.ProgramadorController">
+   <children>
+      <ImageView fitHeight="667.0" fitWidth="969.0" layoutX="-247.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Fondo4.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#02bfbf" layoutX="811.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerson Aarón Matta Aguilar" wrappingWidth="312.13818359375">
+         <font>
+            <Font name="MS Outlook" size="25.0" />
+         </font>
+      </Text>
+      <Button layoutX="878.0" layoutY="544.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="41.0" prefWidth="180.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Regresar">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="868.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/IconoPestaña.png" />
+         </image>
+      </ImageView>
+      <Text fill="#6595bf" layoutX="807.0" layoutY="230.0" stroke="#6595bf" strokeType="OUTSIDE" strokeWidth="0.0" text="Clínica Dens" textAlignment="CENTER">
+         <font>
+            <Font name="MS Outlook" size="60.0" />
+         </font>
+      </Text>
+      <Text layoutX="839.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programador">
+         <font>
+            <Font name="MS Outlook" size="45.0" />
+         </font>
+      </Text>
+      <Text fill="#02bfbf" layoutX="817.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IN5AV        -        2021223" wrappingWidth="300.13818359375">
+         <font>
+            <Font name="MS Outlook" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="909.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/ProgramadorViewFoto.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

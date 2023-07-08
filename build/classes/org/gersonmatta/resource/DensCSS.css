@@ -1,0 +1,300 @@
+
+.menu-bar { /* Color de Fondo de Módulos - Reportes - ? */
+    
+    -fx-cursor: hand;
+    -fx-background-color: #04BFBF ;
+    -fx-border-width: 2.0;
+
+}
+
+.menu-bar .label { /* Módulos - Reportes - ? (Solo a las letras) */
+    
+    -fx-cursor: hand;
+    -fx-font-size: 20.0 pt;
+    -fx-font-family: "MS Outtlook";
+    -fx-text-fill: black;
+    -fx-font-weight: bold; 
+    -fx-padding: 10.0px;
+    
+
+}
+.menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+    -fx-background: #F2F2F2 ;
+    
+    
+}
+.menu-bar:pressed{
+    
+    -fx-background-color: #04BFBF;
+    
+}
+
+.menu-item {
+    -fx-background-color: #04BFBF ;
+    -fx-background: gray ;
+    -fx-border-width: 2.0;
+}
+.menu-item .label{
+    -fx-font-size: 14.0 pt;
+    -fx-text-fill: black;
+    -fx-background: #04BFBF ;
+}
+.menu-item .label:hover{
+    -fx-font-size: 14.0 pt;
+    -fx-background: #F2F2F2 ;
+    -fx-text-fill: black;
+}
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color:white ;
+    -fx-border-width: 0.2px;
+    -fx-border-color: black;
+    /** -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-background-radius: 0.0 6.0 6.0 6.0, 0.0 5.0 5.0 5.0, 0.0 4.0 4.0 4.0;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; 
+    -fx-opacity: 0.9;*/
+}
+
+.date-picker .text-field {
+    -fx-control-inner-background: #00f2f27f ;
+}
+
+.date-picker-popup > .month-year-pane {
+    -fx-padding: 0.588883em 0.5em 0.666667em 0.5em; /* 7 6 8 6 */
+    -fx-background-color: derive(-fx-box-border,30%), 
+        linear-gradient(to bottom, derive(#00f2f27f,-3%), 
+                                   derive(#00f2f27f,5%) 50%, 
+                                   derive(#00f2f27f,-3%));
+    -fx-background-insets: 0 0 0 0, 0 0 1 0;
+}
+
+.date-picker-popup > .date-picker {
+    -fx-padding: 0.588883em 0.5em 0.666667em 0.5em; /* 7 6 8 6 */
+    -fx-background-color: derive(-fx-box-border,30%), 
+        linear-gradient(to bottom, derive(#00f2f27f,-3%), 
+                                   derive(#00f2f27f,5%) 50%, 
+                                   derive(#00f2f27f,-3%));
+    -fx-background-insets: 0 0 0 0, 0 0 1 0;
+}
+
+/* Tabla de datos */
+
+.table-view .column-header,
+.table-view .column-header-background .filler { /* Encabezados */
+    
+    -fx-border-width: 0.5px;
+    -fx-border-color: black;
+    -fx-cell-size : 20;
+    -fx-background-color:   #04bfbf7f;
+    
+}
+.table-view .column-header .label{
+
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+   -fx-alignment: CENTER;
+}
+.table-view .cell{ /* Celdas */
+   -fx-cell-size: 30;
+  -fx-alignment: center-left;
+  -fx-text-fill: black;
+}
+
+.table-row-cell:selected {
+    -fx-background-color:  #6595BF;
+ }
+ .table-row-cell:selected .text {
+        -fx-fill : white ;
+ }
+
+
+/* Botones Nuevo, Eliminar, Reporte, Modificar */
+
+.buttonCrud{
+
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #000000;
+    -fx-cursor: hand;
+    -fx-transition: all 0.5s;
+
+}
+.buttonCrud:hover{
+
+    -fx-background-color: #F2F2F2;
+    -fx-border-color: #000000;
+
+}
+
+.buttonCrud:pressed{
+
+   -fx-background-color: #c1bebeff;
+   -fx-border-color: #000000;
+   -fx-text-fill: white;
+
+}
+
+/* Separador */
+
+.separador{
+    
+    -fx-background-color:#000000;
+    
+}
+
+/* Opciones de Módulos */
+
+.buttonModulos{
+    
+   -fx-font-family: "MS Outtlook";
+   -fx-cursor: hand;
+   -fx-background-color: #04BFBF;
+   -fx-border-color: black;
+   -fx-text-fill: black;
+    
+}
+
+.buttonModulos:hover{
+    
+   -fx-font-family: "MS Outtlook";
+   -fx-cursor: hand;
+   -fx-background-color: #F2F2F2;
+   -fx-border-color: black;
+   -fx-text-fill: black;
+    
+}
+
+.buttonModulos:pressed{
+    
+   -fx-font-family: "MS Outtlook";
+   -fx-cursor: hand;
+   -fx-background-color: #c1bebeff;
+   -fx-border-color: black;
+   -fx-text-fill: black;
+    
+}
+
+/* Fondo y borde columnas */
+
+.fondoColumna{
+    
+    -fx-background-color:  #04bfbf7f;
+    -fx-border-color:  #000000
+    
+}
+
+/* Color fondo blanco */
+
+.fondoBlanco{
+    
+    -fx-background-color: white;
+    
+}
+
+/* Color fondo gris */
+
+.fondoGris{
+
+    -fx-background-color:  #f2f2f2;
+    
+}
+
+/* Color fondo menta */
+
+.fondoMenta{
+    
+    -fx-background-color:  #04bfbf7f;
+    
+}
+
+/* Boton Login */
+
+.buttonLogin{
+    
+   -fx-cursor: hand;
+   -fx-background-color: #2469a6;
+    
+}
+
+.buttonLogin:hover{
+
+   -fx-cursor: hand;
+   -fx-background-color: #1f5d8f;
+
+}
+
+.buttonLogin:pressed{
+    
+   -fx-cursor: hand;
+   -fx-background-color: #6595bf;
+    
+}
+
+/* Boton Cerrar Sesión */
+
+.buttonCerrarSesion{
+    
+   -fx-cursor: hand;
+   -fx-background-color: #FFFFFF;
+    
+}
+
+.buttonCerrarSesion:hover{
+
+   -fx-cursor: hand;
+   -fx-background-color: #ff9c9c;
+
+}
+
+.buttonCerrarSesion:pressed{
+    
+   -fx-cursor: hand;
+   -fx-background-color: #ff4747;
+    
+}
+
+
+
+
+
+
+
+/*.buttonCrud {
+  -fx-display: inline-block;
+  -fx-border-radius: 4px;
+  -fx-background-color: #f4511e;
+  -fx-border: none;
+  -fx-color: #FFFFFF;
+  -fx-text-align: center;
+  -fx-font-size: 28px;
+  -fx-padding: 20px;
+  -fx-width: 200px;
+  -fx-transition: all 0.5s;
+  -fx-cursor: hand;
+  -fx-margin: 5px;
+}
+
+.buttonCrud span {
+  -fx-cursor: hand;
+  -fx-display: inline-block;
+  -fx-position: relative;
+  -fx-transition: 0.5s;
+}
+
+.buttonCrud span:after {
+  -fx-content: '\00bb';
+  -fx-position: absolute;
+  -fx-opacity: 0;
+  -fx-top: 0;
+  -fx-right: -20px;
+  -fx-transition: 0.5s;
+}
+
+.buttonCrud:hover span {
+  -fx-padding-right: 25px;
+}
+
+.buttonCrud:hover span:after {
+  -fx-opacity: 1;
+  -fx-right: 0;
+}*/
+

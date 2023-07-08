@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.gersonmatta.controller.CitaController">
+   <children>
+      <Pane prefHeight="608.0" prefWidth="242.0" style="-fx-background-color: #02bfbf;">
+         <children>
+            <JFXButton fx:id="btnNuevo" layoutX="21.0" layoutY="226.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="55.0" prefWidth="200.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Nuevo">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#858585c2" />
+                        <Stop color="#858585" offset="0.27898550724637683" />
+                        <Stop color="#85858580" offset="0.5199630576868429" />
+                        <Stop color="WHITE" offset="0.8007246376811594" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Line endX="-25.5" endY="-24.0" layoutX="55.0" layoutY="258.0" startX="-25.500015258789062" startY="14.0" stroke="#48e530" strokeWidth="5.0" styleClass="buttonCrud" />
+            <JFXButton fx:id="btnEliminar" layoutX="21.0" layoutY="317.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="55.0" prefWidth="200.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Eliminar">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#858585c2" />
+                        <Stop color="#858585" offset="0.27898550724637683" />
+                        <Stop color="#85858580" offset="0.5199630576868429" />
+                        <Stop color="WHITE" offset="0.8007246376811594" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Line endX="-25.5" endY="-24.0" layoutX="55.0" layoutY="349.0" startX="-25.500015258789062" startY="14.0" stroke="RED" strokeWidth="5.0" styleClass="buttonCrud" />
+            <JFXButton fx:id="btnReporte" layoutX="21.0" layoutY="500.0" mnemonicParsing="false" onAction="#reporte" prefHeight="55.0" prefWidth="200.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Reporte">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#858585c2" />
+                        <Stop color="#858585" offset="0.27898550724637683" />
+                        <Stop color="#85858580" offset="0.5199630576868429" />
+                        <Stop color="WHITE" offset="0.8007246376811594" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Line endX="-25.5" endY="-24.0" layoutX="55.0" layoutY="532.0" startX="-25.500015258789062" startY="14.0" stroke="#ffd300" strokeWidth="5.0" styleClass="buttonCrud" />
+            <JFXButton fx:id="btnEditar" layoutX="21.0" layoutY="408.0" mnemonicParsing="false" onAction="#editar" prefHeight="55.0" prefWidth="200.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Editar">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#858585c2" />
+                        <Stop color="#858585" offset="0.27898550724637683" />
+                        <Stop color="#85858580" offset="0.5199630576868429" />
+                        <Stop color="WHITE" offset="0.8007246376811594" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <Line endX="-25.5" endY="-24.0" layoutX="54.0" layoutY="440.0" startX="-25.500015258789062" startY="14.0" stroke="#0080ff" strokeWidth="5.0" styleClass="buttonCrud" />
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="178.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/FlechaDerecha.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="178.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/FlechaDerecha.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="178.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/FlechaDerecha.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="22.0" fitWidth="23.0" layoutX="178.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/FlechaDerecha.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="21.0" layoutY="55.0" prefHeight="123.0" prefWidth="200.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25; -fx-border-color: #000000; -fx-border-radius: 25; -fx-border-width: 2;">
+               <children>
+                  <Text fill="#6595bf" layoutX="5.0" layoutY="31.0" stroke="#6595bf" strokeType="OUTSIDE" strokeWidth="0.0" text="CITAS" textAlignment="CENTER" wrappingWidth="190.4560546875">
+                     <font>
+                        <Font name="MS Outlook" size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="72.0" fitWidth="71.0" layoutX="65.0" layoutY="42.0">
+                     <image>
+                        <Image url="@../image/IconoCita.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fx:id="imgNuevo" fitHeight="45.0" fitWidth="45.0" layoutX="40.0" layoutY="231.0" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/Agregar.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgEliminar" fitHeight="44.0" fitWidth="44.0" layoutX="40.0" layoutY="322.0" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/Eliminar.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgEditar" fitHeight="45.0" fitWidth="45.0" layoutX="40.0" layoutY="413.0" styleClass="buttonCrud">
+               <image>
+                  <Image url="@../image/Modificar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fx:id="imgReporte" fitHeight="44.0" fitWidth="44.0" layoutX="40.0" layoutY="505.0" styleClass="buttonCrud">
+         <image>
+            <Image url="@../image/Reporte.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="61.0" layoutX="280.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/IconoPestaña.png" />
+         </image>
+      </ImageView>
+      <Text fill="#6595bf" layoutX="351.0" layoutY="75.0" stroke="#6595bf" strokeType="OUTSIDE" strokeWidth="0.0" text="Clínica Dens" textAlignment="CENTER">
+         <font>
+            <Font name="MS Outlook" size="30.0" />
+         </font>
+      </Text>
+      <Line endX="813.60009765625" layoutX="371.0" layoutY="94.0" startX="-112.0" stroke="#6595bf" strokeWidth="2.0" />
+      <Button fx:id="btnSalir" layoutX="1006.0" layoutY="43.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="41.0" prefWidth="180.0" styleClass="buttonCrud" stylesheets="@../resource/DensCSS.css" text="Regresar">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Button>
+      <GridPane fx:id="grpFechas" alignment="CENTER" layoutX="261.0" layoutY="126.0" prefHeight="28.0" prefWidth="916.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="459.0" minWidth="10.0" prefWidth="91.99998168945312" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="0.0" prefWidth="220.80001831054688" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="26.199987792968727" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="53.60000000000002" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="206.40003662109376" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="23.799975585937545" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="71.20002441406245" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="783.6666564941406" minWidth="10.0" prefWidth="224.80001220703127" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="133.0" text="Código">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="-30.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtCodigoCitas" editable="false" prefHeight="26.0" prefWidth="84.0" styleClass="fondoMenta" stylesheets="@../resource/DensCSS.css" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </TextField>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="133.0" text="Fecha" GridPane.columnIndex="3">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="133.0" text="Hora" GridPane.columnIndex="6">
+               <font>
+                  <Font name="MS Outlook" size="15.0" />
+               </font>
+            </Label>
+            <JFXTimePicker fx:id="jfxHoraCita" defaultColor="#02bfbf" disable="true" prefHeight="28.0" prefWidth="234.0" GridPane.columnIndex="7" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tblCitas" layoutX="264.0" layoutY="240.0" onMouseClicked="#seleccionarElemento" prefHeight="342.0" prefWidth="916.0" stylesheets="@../resource/DensCSS.css">
+         <columns>
+            <TableColumn fx:id="colCodigoCita" prefWidth="81.5999755859375" text="Código" />
+            <TableColumn fx:id="colFechaCita" prefWidth="111.199951171875" text="Fecha" />
+            <TableColumn fx:id="colHoraCita" prefWidth="121.60003662109375" text="Hora" />
+            <TableColumn fx:id="colTratamiento" prefWidth="201.60003662109375" text="Tratamiento" />
+            <TableColumn fx:id="colDescripCondActual" prefWidth="213.5999755859375" text="Condicion Actual" />
+            <TableColumn fx:id="colPaciente" prefWidth="91.20001220703125" text="Paciente" />
+            <TableColumn fx:id="colDoctor" prefWidth="96.00006103515625" text="Doctor" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="258.0" layoutY="162.0" prefHeight="28.0" prefWidth="86.0" text="Tratamiento">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="661.0" layoutY="159.0" prefHeight="28.0" prefWidth="230.0" text="Descripción / Condicion Actual">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTratamiento" editable="false" layoutX="352.0" layoutY="160.0" prefHeight="26.0" prefWidth="290.0" styleClass="fondoMenta" stylesheets="@../resource/DensCSS.css" />
+      <TextField fx:id="txtDescripCondActual" editable="false" layoutX="889.0" layoutY="160.0" prefHeight="26.0" prefWidth="290.0" styleClass="fondoMenta" stylesheets="@../resource/DensCSS.css" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="261.0" layoutY="193.0" prefHeight="28.0" prefWidth="61.0" text="Paciente">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="780.0" layoutY="194.0" prefHeight="28.0" prefWidth="54.0" text="Doctor">
+         <font>
+            <Font name="MS Outlook" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbPaciente" disable="true" layoutX="353.0" layoutY="195.0" prefHeight="26.0" prefWidth="340.0" />
+      <ComboBox fx:id="cmbDoctor" disable="true" layoutX="840.0" layoutY="195.0" prefHeight="26.0" prefWidth="340.0" />
+   </children>
+</AnchorPane>

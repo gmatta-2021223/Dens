@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteMedicamentos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3866c573-905d-4c39-acd0-5d6c0b65ff88">
+	<property name="ireport.zoom" value="1.2100000000000206"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<parameter name="FONDO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarMedicamentos]]>
+	</queryString>
+	<field name="codigoMedicamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreMedicamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="554" height="802" uuid="61ee4908-8a71-4cb3-ac99-50020e12a689"/>
+				<imageExpression><![CDATA[$P{FONDO}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="320" y="0" width="108" height="79" uuid="00087268-2c13-405a-b011-f29f8c4d01d6"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="454" y="0" width="100" height="20" uuid="c22e9fe9-fd82-49ef-b4d8-1bb164db11ed"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="47" y="20" width="233" height="45" forecolor="#00CCCC" uuid="ba4191ff-e7f1-49b2-95c6-abe0a0ae407d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Rockwell" size="36" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Clínica Dens]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="14" width="324" height="34" forecolor="#2F3BB9" uuid="8bd453d0-3cab-4682-8938-7a4a69a8a3a4"/>
+				<textElement>
+					<font fontName="Rockwell" size="24" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de Medicamentos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="47" width="555" height="1" uuid="f7279e56-66cc-4694-bd9f-4d494d440629"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="66" y="41" width="197" height="20" uuid="56354453-e8d1-4474-bf0d-331bff469fe5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Codigo de Medicamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="41" width="233" height="20" uuid="7425cf13-059b-4851-b192-d06082e76e75"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Medicamento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="262" y="40" width="1" height="21" uuid="8b574d3d-33c6-48cd-bd7d-6de18e0b1499"/>
+			</line>
+			<line>
+				<reportElement x="66" y="40" width="1" height="21" uuid="511c17bc-dd47-402b-af65-3d6b44281c7e"/>
+			</line>
+			<line>
+				<reportElement x="494" y="40" width="1" height="21" uuid="81bb1706-a813-48dd-9a28-dbc09400e727"/>
+			</line>
+			<line>
+				<reportElement x="66" y="40" width="428" height="1" uuid="e30666fb-f06c-44cc-8eb1-40a926ab1b7a"/>
+			</line>
+			<line>
+				<reportElement x="67" y="60" width="428" height="1" uuid="83e9657f-2c52-4c14-82f3-b955f5c25b42"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="66" y="0" width="197" height="31" uuid="66416293-bb1c-4970-a8a3-b2bb637c120b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codigoMedicamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="0" width="233" height="31" uuid="f8a44136-a6fd-43c3-b476-e159d0262b70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreMedicamento}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="262" y="0" width="1" height="31" uuid="e59d2593-06d4-4357-a133-e155b8172754"/>
+			</line>
+			<line>
+				<reportElement x="66" y="0" width="1" height="31" uuid="515a2af6-6315-4d36-8f4a-8932c0400f2f"/>
+			</line>
+			<line>
+				<reportElement x="494" y="0" width="1" height="31" uuid="a55d7ed8-9375-493f-ba52-058111647750"/>
+			</line>
+			<line>
+				<reportElement x="66" y="31" width="429" height="1" uuid="c02567b1-c7ee-47bb-9362-a46c71ac851a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="45" y="33" width="509" height="1" uuid="5f4fbe8a-6ec0-4c13-9226-92ef5c0b3877"/>
+			</line>
+			<staticText>
+				<reportElement x="27" y="34" width="103" height="20" forecolor="#FFFFFF" uuid="2696ece4-9033-4da1-b2ed-26d59502adc9"/>
+				<textElement textAlignment="Center">
+					<font fontName="Rockwell" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Clínica Dens]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="515" y="34" width="39" height="20" backcolor="#000000" uuid="e13ffcd4-147c-4bd4-a2cf-60ffcceb21f4"/>
+				<graphicElement>
+					<pen lineWidth="1.6"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="514" y="34" width="40" height="19" forecolor="#FFFFFF" uuid="b79a50c5-5562-4301-9473-8488cfc908f0"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

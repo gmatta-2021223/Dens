@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDetallesRecetas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5263504-c7e6-4fef-a861-ed36047a84f7">
+	<property name="ireport.zoom" value="2.143588810000046"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select
+	DR.codigoDetalleReceta	as Codigo_Receta,
+	R.fechaReceta 		as Fecha_Receta,
+          	P.nombresPaciente	 	as Nombres,
+          	P.apellidosPaciente 		as Apellidos,
+          	P.sexo 			as Sexo,
+          	P.fechaNacimiento 		as Fecha_Nacimiento,
+          	M.nombreMedicamento 		as Medicamento,
+	DR.dosis 			as Dosis,
+	R.numeroColegiado	 	as Numero_Colegiado
+
+		from DetalleReceta DR
+		inner join Recetas R 	on R.codigoReceta = DR.codigoReceta
+                	inner join Medicamentos M 	on M.codigoMedicamento = DR.codigoMedicamento
+                	inner join Doctores D 	on D.numeroColegiado = R.numeroColegiado
+                	inner join Citas C 		on C.numeroColegiado = D.numeroColegiado
+                	inner join Pacientes P 	on P.codigoPaciente = C.codigoPaciente
+
+			where R.codigoReceta = $P{codReceta};]]>
+	</queryString>
+	<field name="Codigo_Receta" class="java.lang.Integer"/>
+	<field name="Fecha_Receta" class="java.sql.Date"/>
+	<field name="Nombres" class="java.lang.String"/>
+	<field name="Apellidos" class="java.lang.String"/>
+	<field name="Sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Fecha_Nacimiento" class="java.sql.Date"/>
+	<field name="Medicamento" class="java.lang.String"/>
+	<field name="Dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Numero_Colegiado" class="java.lang.Integer"/>
+	<detail>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="200" height="20" uuid="775e09bb-b5ae-4161-8f03-82b748dbf111"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Nombre Completo del Paciente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="143" height="20" uuid="18144585-4f4a-41c1-baf8-5370a2aba300"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Fecha de Nacimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="143" y="66" width="57" height="20" uuid="e36c2edd-5e3d-4b95-806a-3ee61f724557"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="200" y="1" width="1" height="116" uuid="5c4dc610-7626-482d-a32a-2f411c28b41e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="1" height="116" uuid="d9407cfc-070e-40f7-9e64-a35b96d0d9d7"/>
+			</line>
+			<line>
+				<reportElement x="0" y="117" width="201" height="1" uuid="4652f31a-8e2b-48c6-a9c5-d35cc11a2e92"/>
+			</line>
+			<line>
+				<reportElement x="0" y="65" width="201" height="1" uuid="9999253c-765f-4d25-a996-96e87cb2a9df"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="201" height="1" uuid="2164bd1f-7b13-44d1-9b06-e3b1ba66a14d"/>
+			</line>
+			<staticText>
+				<reportElement x="380" y="0" width="174" height="20" uuid="7b68b23e-5c31-4d66-9b27-4401d191623b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Dosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="137" height="20" uuid="722efef2-4218-41e2-83b3-c755ee159347"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Medicamento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="143" y="66" width="1" height="51" uuid="4ba6f319-ddcb-466c-aa82-e979423bf921"/>
+			</line>
+			<line>
+				<reportElement x="243" y="0" width="1" height="102" uuid="c9890562-5e49-4b41-a219-270504191fb5"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="102" uuid="7c0ecccb-14f1-489f-b80a-b9e17c8b3cf0"/>
+			</line>
+			<line>
+				<reportElement x="244" y="101" width="310" height="1" uuid="cf85c5a1-5ebf-4b7a-980e-6f238428e763"/>
+			</line>
+			<line>
+				<reportElement x="244" y="0" width="310" height="1" uuid="3d171cbb-2c38-490a-9235-10a68fe53c55"/>
+			</line>
+			<line>
+				<reportElement x="380" y="0" width="1" height="102" uuid="1e274708-cc50-4932-a351-25ffbf41b3ca"/>
+			</line>
+			<textField>
+				<reportElement x="101" y="21" width="100" height="44" uuid="8a6904dc-d0a6-4858-838c-37d1e9846758"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="21" width="100" height="45" uuid="cb2f78dc-e256-4e62-8360-5653c5423cce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="86" width="56" height="31" uuid="6e12dafa-1b0b-444d-bbc8-09900230ec35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="86" width="143" height="31" uuid="c016dd2a-b2de-42ed-a50e-51b3fe0a2aa5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Fecha_Nacimiento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="244" y="21" width="136" height="80" uuid="20b4898b-fad7-4a74-9180-669e9d793892"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Medicamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="21" width="174" height="81" uuid="622e68eb-272e-421d-b314-6a9498a3cca3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Dosis}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

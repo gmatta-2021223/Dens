@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteReceta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b190c1b8-a72c-4d88-9a1b-af7186bca45b">
+	<property name="ireport.zoom" value="1.5000000000000735"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="528"/>
+	<parameter name="FONDO" class="java.lang.String"/>
+	<parameter name="LOGO" class="java.lang.String"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Aarón Matta\\Documents\\NetBeansProjects\\Dens2021223\\src\\org\\gersonmatta\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FIRMA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 	R.codigoReceta as Codigo,
+	R.fechaReceta as Fecha,
+	D.numeroColegiado as Numero_Colegiado,
+	D.nombresDoctor as NombresDoctor,
+	D.apellidosDoctor as ApellidosDoctor
+
+		from Recetas R
+		inner join Doctores D on D.numeroColegiado = R.numeroColegiado
+
+		where R.codigoReceta = $P{codReceta};]]>
+	</queryString>
+	<field name="Codigo" class="java.lang.Integer"/>
+	<field name="Fecha" class="java.sql.Date"/>
+	<field name="Numero_Colegiado" class="java.lang.Integer"/>
+	<field name="NombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ApellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="555" height="802" uuid="80072ee3-35d9-4b82-b351-d511a14a97e7"/>
+				<imageExpression><![CDATA[$P{FONDO}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="b4a28241-b97a-42af-b568-f6eb45fc2875"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="294" y="0" width="108" height="79" uuid="d5e0c615-67c0-4750-9911-b044d0be0b47"/>
+				<imageExpression><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="33" y="20" width="233" height="45" forecolor="#00CCCC" uuid="c9747518-921e-4f75-a4a1-08e31a159cf2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Rockwell" size="36" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Clínica Dens]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="25" width="282" height="34" forecolor="#2F3BB9" uuid="a6d25396-cbc6-4259-bfd5-795b9fc1263c"/>
+				<textElement>
+					<font fontName="Rockwell" size="24" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de Recetas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="555" height="1" uuid="412788af-1f4b-4c25-b8c5-b048556af33a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="371" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="63" width="68" height="20" uuid="9b42e47d-d668-48a9-bd31-58ea96e1327e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Codigo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="68" y="63" width="128" height="20" uuid="3d63d613-4b61-46c8-a78d-f9f5177a14ed"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="63" width="117" height="20" uuid="dc42d4d3-8c35-4fce-96ad-6495837bdbb2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Numero_Colegiado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="63" width="123" height="20" uuid="df7eab86-3e54-4f44-ad66-c4846dc9c452"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{NombresDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="63" width="122" height="20" uuid="3ecbf2ea-8aef-4e5b-8a0f-a4da3e479f64"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ApellidosDoctor}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="195" y="51" width="1" height="46" uuid="1de2f297-8d0e-455b-b0c9-8f75c391d046"/>
+			</line>
+			<line>
+				<reportElement x="311" y="51" width="1" height="46" uuid="7ce19e8a-a68e-44db-8f77-96f501f4eeb1"/>
+			</line>
+			<line>
+				<reportElement x="433" y="51" width="1" height="46" uuid="622aca67-9989-492a-bc40-140d7d1952e4"/>
+			</line>
+			<line>
+				<reportElement x="554" y="51" width="1" height="46" uuid="32b7be01-0c01-4466-b12a-eb2a5452c619"/>
+			</line>
+			<line>
+				<reportElement x="0" y="51" width="1" height="46" uuid="11b0c585-7922-4be1-b510-eb3176066f7f"/>
+			</line>
+			<line>
+				<reportElement x="67" y="51" width="1" height="46" uuid="09e2c3ed-b8e9-4bd6-9712-b780e9f9ba27"/>
+			</line>
+			<line>
+				<reportElement x="1" y="96" width="553" height="1" uuid="dcb9d5a7-5ac7-475b-9fce-e55c44011edc"/>
+			</line>
+			<staticText>
+				<reportElement x="68" y="31" width="129" height="20" uuid="9ef5672d-2611-492d-b127-16a93e588a2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="31" width="122" height="20" uuid="fd9edf65-ef42-4134-b749-3de18df0fb07"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Nombres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="68" height="20" uuid="e73ee1a3-64a3-435e-ba14-cd76684843f8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="433" y="31" width="122" height="20" uuid="1817fe71-2a73-485b-b1fc-da1ab04b88db"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="195" y="2" width="1" height="49" uuid="a54a0a33-8ace-4088-ad0c-e60041472b3c"/>
+			</line>
+			<staticText>
+				<reportElement x="196" y="6" width="359" height="20" uuid="fbe12883-ab1b-4d27-bb84-3dc68e4712ee"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Información del Doctor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="195" y="1" width="360" height="1" uuid="ac4a89ce-d71f-42c8-a9ae-5e7d51bde6ea"/>
+			</line>
+			<line>
+				<reportElement x="554" y="2" width="1" height="49" uuid="eb930f9f-bb86-4689-94cf-e6f9102682b7"/>
+			</line>
+			<line>
+				<reportElement x="196" y="25" width="358" height="1" uuid="70f2d38b-6e15-4d31-aef2-f986e010f5c6"/>
+			</line>
+			<line>
+				<reportElement x="196" y="50" width="358" height="1" uuid="920ae704-75f7-45b6-a455-2e38324a7e6f"/>
+			</line>
+			<line>
+				<reportElement x="311" y="26" width="1" height="24" uuid="bf01df40-d3b3-4088-ac39-4b376b59c26c"/>
+			</line>
+			<line>
+				<reportElement x="433" y="26" width="1" height="25" uuid="011cd2df-efad-4e61-bbea-45041e89fa09"/>
+			</line>
+			<line>
+				<reportElement x="0" y="25" width="195" height="1" uuid="deeca87a-126e-45e8-8bd0-698133890f5f"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="195" height="1" uuid="9c058d31-5a3d-49d7-a367-c5bb31f811f9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="1" height="49" uuid="f1b585cb-da23-48b2-a3d4-4234beeda90b"/>
+			</line>
+			<staticText>
+				<reportElement x="196" y="31" width="116" height="20" uuid="e18bc3f2-02db-47fe-aca4-e208cdbcb3e0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Número de Colegiado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="5" width="195" height="20" uuid="0533953c-35b7-4f7a-a914-a9a14238f536"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Receta]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="50" width="194" height="1" uuid="11e2eab7-074f-499c-a576-ef1fffb66da4"/>
+			</line>
+			<line>
+				<reportElement x="67" y="26" width="1" height="24" uuid="b6f4a6b4-b242-495e-a113-aad655ddd82e"/>
+			</line>
+			<subreport>
+				<reportElement x="-20" y="118" width="574" height="100" uuid="e19ba829-3dfb-408d-af3d-db0486015b2a"/>
+				<subreportParameter name="codReceta">
+					<subreportParameterExpression><![CDATA[$P{codReceta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ReporteDetallesRecetas.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="275" width="68" height="20" uuid="b6613d6b-8b6d-4de1-9be1-01864ac60200"/>
+				<textElement textAlignment="Center">
+					<font isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Firma]]></text>
+			</staticText>
+			<image>
+				<reportElement x="16" y="295" width="197" height="76" uuid="ac9f93ec-252e-4990-aa6d-47dfff31a25e"/>
+				<imageExpression><![CDATA[$P{FIRMA}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="515" y="33" width="39" height="20" backcolor="#000000" uuid="f6c5ed0d-9c96-4de7-a18d-4a2fc23f0b65"/>
+				<graphicElement>
+					<pen lineWidth="1.6"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="514" y="33" width="40" height="19" forecolor="#FFFFFF" uuid="938637ab-23dd-464b-8a4c-81f6c837ff30"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="45" y="32" width="509" height="1" uuid="d42d9fba-77d8-45c3-b288-6d0325d9877d"/>
+			</line>
+			<staticText>
+				<reportElement x="27" y="34" width="103" height="20" forecolor="#FFFFFF" uuid="a498790d-f1f5-4a5a-a92d-dd2a9e28050e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Rockwell" size="9" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Clínica Dens]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
